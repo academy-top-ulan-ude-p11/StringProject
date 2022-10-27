@@ -41,13 +41,13 @@ public:
 	String operator=(String);
 	String operator=(const char*);
 
-	char operator[](int);
+	char& operator[](int);
 
-	friend String operator+(String, String);
-	friend String operator+(String, const char*);
+	friend String operator+(const String&, const String&);
+	friend String operator+(const String&, const char*);
 	friend String operator+(const char*, String);
 
-	friend bool operator>(String, String);
+	friend bool operator>(const String&, const String&);
 	friend bool operator>(String, const char*);
 	friend bool operator>(const char*, String);
 
@@ -71,5 +71,10 @@ public:
 	friend bool operator!=(String, const char*);
 	friend bool operator!=(const char*, String);
 
+	int Compare(const String&);
+
+	bool Contains(String);
+	bool Contains(char);
+	bool Contains(const char*);
 };
 
